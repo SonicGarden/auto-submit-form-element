@@ -1,11 +1,11 @@
-# &lt;custom-element&gt; element
+# &lt;auto-submit-form&gt; element
 
-Boilerplate for creating a custom element.
+Auto submit form element.
 
 ## Installation
-Available on [npm](https://www.npmjs.com/) as [**@github/custom-element-element**](https://www.npmjs.com/package/@github/custom-element-element).
+
 ```
-$ npm install --save @github/custom-element-element
+$ npm install --save @sonicgarden/auto-submit-form-element
 ```
 
 ## Usage
@@ -15,22 +15,19 @@ $ npm install --save @github/custom-element-element
 Import as ES modules:
 
 ```js
-import '@github/custom-element-element'
+import '@sonicgarden/auto-submit-form-element'
 ```
-
-Include with a script tag:
 
 ```html
-<script type="module" src="./node_modules/@github/custom-element-element/dist/index.js">
-```
-
-An example Custom Element. This documentation ends up in the
-README so describe how this elements works here.
-
-You can event add examples on the element is used with Markdown.
-
-```
-<custom-element></custom-element>
+<auto-submit-form>
+  <form action="/" method="get">
+    <select name="filter">
+      <option></option>
+      <option value="1">option1</option>
+      <option value="2">option2</option>
+    </select>
+  </form>
+</auto-submit-form>
 ```
 
 ## Browser support

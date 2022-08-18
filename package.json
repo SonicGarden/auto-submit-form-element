@@ -1,13 +1,13 @@
 {
-  "name": "@github/custom-element-element",
-  "version": "0.0.1",
-  "description": "Boilerplate for creating a custom element.",
-  "main": "dist/custom-element.js",
-  "module": "dist/custom-element.js",
+  "name": "@sonicgarden/auto-submit-form-element",
+  "version": "0.1.0",
+  "description": "Auto submit form element.",
+  "main": "dist/auto-submit-form.js",
+  "module": "dist/auto-submit-form.js",
   "type": "module",
-  "types": "dist/custom-elements.d.ts",
+  "types": "dist/auto-submit-form.d.ts",
   "license": "MIT",
-  "repository": "github/custom-element-boilerplate",
+  "repository": "SonicGarden/auto-submit-form-element",
   "files": [
     "dist"
   ],
@@ -19,24 +19,23 @@
     "pretest": "npm run build",
     "test": "web-test-runner \"test/**/*\" --node-resolve",
     "start": "web-dev-server --node-resolve --open --watch --app-index=examples/index.html --root-dir=. --esbuild-target auto",
-    "prepublishOnly": "npm run build",
-    "postpublish": "npm publish --ignore-scripts --@github:registry='https://npm.pkg.github.com'"
+    "prepublishOnly": "npm run build"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.6.4",
     "@github/cem-plugin-readme": "^0.0.1",
     "@github/prettier-config": "0.0.4",
-    "@open-wc/testing": "^3.1.4",
-    "@web/dev-server": "^0.1.31",
-    "@web/dev-server-esbuild": "^0.3.0",
-    "@web/test-runner": "^0.13.27",
+    "@open-wc/testing": "^3.1.6",
+    "@web/dev-server": "^0.1.34",
+    "@web/dev-server-esbuild": "^0.3.2",
+    "@web/test-runner": "^0.14.0",
     "cem-plugin-vs-code-custom-data-generator": "^1.0.0-beta.6",
     "chromium": "^3.0.3",
-    "eslint": "^8.14.0",
+    "eslint": "^8.22.0",
     "eslint-plugin-custom-elements": "^0.0.6",
-    "eslint-plugin-github": "^4.3.6",
-    "typescript": "^4.2.4"
+    "eslint-plugin-github": "^4.3.7",
+    "typescript": "^4.7.4"
   },
   "customElements": "custom-elements.json"
 }

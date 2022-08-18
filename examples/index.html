@@ -2,14 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>custom-element demo</title>
+    <title>auto-submit-form demo</title>
   </head>
   <body>
-    <custom-element></custom-element>
+    <auto-submit-form>
+      <form action="#" method="get">
+        <select name="query">
+          <option></option>
+          <option value="1">option 1</option>
+          <option value="2">option 2</option>
+        </select>
+      </form>
+    </auto-submit-form>
 
     <script type="module">
       // import 'https://unpkg.com/@github/custom-element-boilerplate@latest/dist/custom-element.js'
-      import '../src/custom-element.ts'
+      import '../src/auto-submit-form.ts'
     </script>
   </body>
 </html>
