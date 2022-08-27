@@ -20,6 +20,8 @@ import '@sonicgarden/auto-submit-form-element'
 
 ### Html
 
+**Basic**
+
 ```html
 <auto-submit-form>
   <form action="/" method="get">
@@ -30,6 +32,24 @@ import '@sonicgarden/auto-submit-form-element'
     </select>
   </form>
 </auto-submit-form>
+```
+
+**With `submitter` attribute**
+
+```html
+<form action="/" method="post">
+  <auto-submit-form submitter="#filter-country">
+    <select name="country">
+      <option></option>
+      <option value="jp">JP</option>
+      <option value="us">US</option>
+    </select>
+    <input type="submit" id="filter-country" name="filter" formnovalidate hidden />
+  </auto-submit-form>
+  <select name="city">
+  </select>
+  <input type="submit" value="Save" />
+</form>
 ```
 
 **Attributes**
