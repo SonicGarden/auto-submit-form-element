@@ -1,6 +1,6 @@
 {
   "name": "@sonicgarden/auto-submit-form-element",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Auto submit form element.",
   "main": "dist/auto-submit-form.js",
   "module": "dist/auto-submit-form.js",
