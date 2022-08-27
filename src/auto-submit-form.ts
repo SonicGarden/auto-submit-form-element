@@ -1,3 +1,7 @@
+const isInputElement = (element: HTMLElement): element is HTMLInputElement | HTMLSelectElement => {
+  return element instanceof HTMLInputElement || element instanceof HTMLSelectElement
+}
+
 export class AutoSubmitForm extends HTMLElement {
   connectedCallback(): void {
     this.addEventListener('change', this.onSubmit)
@@ -13,11 +17,24 @@ export class AutoSubmitForm extends HTMLElement {
       return
     }
 
-    const form = target.closest('form')
+    const form = isInputElement(target) ? target.form : target.closest('form')
+    const submitter = this.submitter ? form?.querySelector<HTMLElement>(this.submitter) : undefined
     if (form?.requestSubmit) {
-      form.requestSubmit()
+      form.requestSubmit(submitter)
     } else {
-      form?.submit()
+      submitter ? submitter.click() : form?.submit()
+    }
+  }
+
+  get submitter(): string | undefined {
+    return this.getAttribute('submitter') || undefined
+  }
+
+  set submitter(value) {
+    if (value) {
+      this.setAttribute('submitter', value)
+    } else {
+      this.removeAttribute('submitter')
     }
   }
 }

@@ -18,6 +18,8 @@ Import as ES modules:
 import '@sonicgarden/auto-submit-form-element'
 ```
 
+### Html
+
 ```html
 <auto-submit-form>
   <form action="/" method="get">
@@ -29,6 +31,10 @@ import '@sonicgarden/auto-submit-form-element'
   </form>
 </auto-submit-form>
 ```
+
+**Attributes**
+
+- `submitter`: Submitter selector. (default: `undefined`)
 
 ## Browser support
 
