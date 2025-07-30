@@ -47,7 +47,7 @@ export class AutoSubmitForm extends HTMLElement {
     return ['change']
   }
 
-  set events(value: string[]) {
+  set events(value: readonly string[]) {
     if (value && value.length > 0) {
       this.setAttribute('events', value.join(','))
     } else {
