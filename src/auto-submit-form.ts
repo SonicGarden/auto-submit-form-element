@@ -3,12 +3,22 @@ const isInputElement = (element: HTMLElement): element is HTMLInputElement | HTM
 }
 
 export class AutoSubmitForm extends HTMLElement {
+  private registeredEvents: readonly string[] = []
+
   connectedCallback(): void {
-    this.addEventListener('change', this.onSubmit)
+    const events = this.events
+    this.registeredEvents = events
+    for (const event of events) {
+      this.addEventListener(event, this.onSubmit)
+    }
   }
 
   disconnectedCallback(): void {
-    this.removeEventListener('change', this.onSubmit)
+    for (const event of this.registeredEvents) {
+      this.removeEventListener(event, this.onSubmit)
+    }
+
+    this.registeredEvents = []
   }
 
   onSubmit = (event: Event): void => {
@@ -23,6 +33,25 @@ export class AutoSubmitForm extends HTMLElement {
       form.requestSubmit(submitter)
     } else {
       submitter ? submitter.click() : form?.submit()
+    }
+  }
+
+  get events(): readonly string[] {
+    const eventsAttr = this.getAttribute('events')
+    if (eventsAttr) {
+      return eventsAttr
+        .split(',')
+        .map(event => event.trim())
+        .filter(event => event.length > 0)
+    }
+    return ['change']
+  }
+
+  set events(value: string[]) {
+    if (value && value.length > 0) {
+      this.setAttribute('events', value.join(','))
+    } else {
+      this.removeAttribute('events')
     }
   }
 

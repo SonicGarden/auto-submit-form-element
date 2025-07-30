@@ -52,8 +52,33 @@ import '@sonicgarden/auto-submit-form-element'
 </form>
 ```
 
+**With `events` attribute**
+
+```html
+<auto-submit-form events="blur">
+  <form action="/" method="get">
+    <input type="text" name="search" placeholder="Search...">
+  </form>
+</auto-submit-form>
+```
+
+**With multiple events**
+
+```html
+<auto-submit-form events="change,blur">
+  <form action="/" method="get">
+    <select name="filter">
+      <option></option>
+      <option value="1">option1</option>
+      <option value="2">option2</option>
+    </select>
+  </form>
+</auto-submit-form>
+```
+
 **Attributes**
 
+- `events`: Event names to listen for auto-submission, comma-separated. (default: `change`)
 - `submitter`: Submitter selector. (default: `undefined`)
 
 ## Browser support
